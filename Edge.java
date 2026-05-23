@@ -1,21 +1,20 @@
 public class Edge {
-    private int source;
-    private int destination;
+    private Vertex source;
+    private Vertex destination;
+    private int weight; // Вес ребра для бонуса
 
-    public Edge(int source, int destination) {
+    public Edge(Vertex source, Vertex destination, int weight) {
         this.source = source;
         this.destination = destination;
+        this.weight = weight;
     }
 
-    public int getSource() {
-        return source;
-    }
+    public Vertex getSource() { return source; }
+    public Vertex getDestination() { return destination; }
+    public int getWeight() { return weight; }
 
-    public int getDestination() {
-        return destination;
-    }
-
+    @Override
     public String toString() {
-        return source + " -> " + destination;
+        return source.getId() + " -> " + destination.getId() + " (Weight: " + weight + ")";
     }
 }
